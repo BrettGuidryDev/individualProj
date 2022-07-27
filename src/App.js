@@ -5,11 +5,11 @@ import Rlist from './Rlist'
 
 
 const App = () =>{
-    useEffect(() => {
-        fetch('http://localhost:3000/recipe')
-        .then((data) => data.json())
-        .then((res) => {console.log(res) })
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/recipe')
+    //     .then((data) => data.json())
+    //     .then((res) => {console.log(res) })
+    // }, []);
 
     return (
         <div>

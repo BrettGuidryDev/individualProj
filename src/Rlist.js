@@ -17,14 +17,14 @@ class Rlist extends Component {
         })
     }
 
-
+    // const Rlist = () =>{
 render(){
 
     
     return(
         <dev>
             <dev>
-                { JSON.stringify(this.state) }
+                {JSON.stringify(this.state)}
             </dev>
         </dev>
     );
@@ -34,4 +34,4 @@ render(){
     
 
 
-export default Rlist
+export default Rlist;
