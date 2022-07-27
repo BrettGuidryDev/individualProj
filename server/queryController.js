@@ -1,5 +1,5 @@
 const path = require('path')
-const db = require('./recipes.js');
+const db = require('./dbConnect.js');
 
 const recipeController = {}
 
@@ -11,7 +11,7 @@ recipeController.getRecipe = async (req, res, next) => {
     try {
         const result = await db.query(selectRecipe)
         res.locals.query = result.rows
-        console.log('TESTAPI',res.locals.query)
+        // console.log('TESTAPI',res.locals.query)
         return next();
     } catch (err){
         return next(err)

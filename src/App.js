@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-
+import Rlist from './Rlist'
 
 
 
@@ -12,9 +12,12 @@ const App = () =>{
     }, []);
 
     return (
-        <h1>
+        <div>
+            <h1>
             Welcome to React App thats build using Webpack and Babel separately
-        </h1>
+            </h1>
+            <Rlist /> 
+        </div>
     )
 }
 

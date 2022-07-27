@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const recipeController = require('./api.js')
+const recipeController = require('./queryController.js')
 const cors = require('cors')
 
 app.use(cors())
@@ -11,12 +11,12 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.get('/', (req, res) => {
-  console.log('test!!!!!!!')
+  // console.log('test!!!!!!!')
   return res.status(200).sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 app.get('/recipe', recipeController.getRecipe, (req, res) => {
-  console.log('test!!!!!!!', res.locals.query)
+  // console.log('test!!!!!!!', res.locals.query)
   return res.status(200).json(res.locals.query);
 });
 
