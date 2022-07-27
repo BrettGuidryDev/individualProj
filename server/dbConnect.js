@@ -1,6 +1,6 @@
 const { Pool } = require('pg');
 const key = require('./ignoreme.js');
-// const PG_URI = 'postgres://gdifhdaw:eaZWXkg7jrautbXFFJkjGBJPuYBbX-Qd@lallah.db.elephantsql.com/gdifhdaw'
+
 console.log(key.PG_URI);
 
 
