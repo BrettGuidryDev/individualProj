@@ -10,6 +10,7 @@ let state = {
 // const feedItems = tate.urls.map((e, i) => (<FeedItem url={e} key={i}/>));
 
 console.log(state.items.push(2))
-console.log(state.items)
+for (const each of state.items){
+console.log(each)}
 // console.log(ingList)
 // console.log(feedItems)

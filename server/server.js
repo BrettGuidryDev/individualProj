@@ -20,7 +20,15 @@ app.get('/recipe', recipeController.getRecipe, (req, res) => {
   return res.status(200).json(res.locals.query);
 });
 
+app.post('/addRecipe', recipeController.insertRecipe, (req, res) => {
+  console.log('SERVERtest!!!!!!!', res.locals.data)
+  return res.status(200).json(res.locals.data);
+});
 
+app.get('/delAll', recipeController.delAll, (req, res) => {
+  console.log('SERVERtest!!!!!!!', res.locals.data)
+  return res.status(200).json(res.locals.data);
+});
 
 
 

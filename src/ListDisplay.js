@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { useState } from 'react';
 import { render } from 'react-dom';
-import queries from './DoStuff'
+import queries from '../server/DoStuff'
 
 // class List extends Component {
 //     constructor(props) {
@@ -37,12 +37,23 @@ const List = () => {
   const [items, addItems] = useState([]);
   const [recipe, setRecipe] = useState([]);
 
-  const ingList = items.map((e, i) => <div id={i}>{e}</div>);
+  const ingList = items.map((e, i) => <div id={`item${i}`} key={i+e}>{e}</div>);
+//   const recList = recipe.map((e, i) => <div id={`recipe${i}`} key={i+e}>{e}</div>);
 
-  const addToRecipe = () => {
+  const addToRecipe = async () => {
+    const idVal = document.getElementById('fieldR').value;
+    // setRecipe((recipe[0] = idVal));
+    if (!idVal) return recipe
+    
     if (!recipe[0]) {
-        setRecipe((recipe[0] = document.getElementById('fieldR').value));
-    } else {
+        console.log('idvalllll  ',idVal)
+       await setRecipe((recipe[0] = idVal));
+    }
+    // if (recipe !== idVal) {
+    //     console.log('current state ',recipe, "idVal = ",idVal)
+    //     setRecipe([])
+    // }
+     else {
         return recipe
     }
   };
@@ -51,16 +62,26 @@ const List = () => {
     addItems(items.concat(document.getElementById('fieldI').value));
   };
 
-  const sendItems = () => {
-    async 
+  const sendItems = async (recipe, ingredients) => {
+    await fetch('http://localhost:3000/addRecipe', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({recipe: recipe, ingredients: ingredients}),
+    })
+    setRecipe([]);
+    addItems([]);
   }
 
-  console.log(items);
+  const delAll = async () => {
+    await fetch('http://localhost:3000/delAll')
+  }
+
+//   console.log(items);
   return (
     <div>
       <input type='text' placeholder='Recipe' id='fieldR'></input>
       <input type='text' placeholder='required ingredient' id='fieldI'></input>
-      <button id='b1' onClick={() => { addToRecipe(), addToList() }}>
+      <button id='b1' onClick={() => { addToRecipe(),addToList() }}>
         Add
       </button>
       <div>
@@ -68,8 +89,11 @@ const List = () => {
         {ingList}
       </div>
       <div>
-        <button id='b2' onClick={'tmp'}>
+        <button id='b2' onClick={() => sendItems(recipe, items)}>
           lock it in!
+        </button>
+        <button id='b3' onClick={() => delAll()}>
+          burn it all down
         </button>
       </div>
     </div>
