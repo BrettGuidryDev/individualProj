@@ -1,5 +1,7 @@
 
 const queries = {
+    selectNameI:'select ingredient FROM ingredients where ingredient in ',
+    
     selectIng: 'select * FROM ingredients',
     selectRec: 'select * FROM recipes',
     selectReq: 'select * FROM requirements',
@@ -11,6 +13,7 @@ const queries = {
     delRec: 'delete from recipes',
     delIng: 'delete from ingredients',
     delReq: 'delete from requirements',
+
     
 };
 //INSERT INTO recipes(ingredient) VALUES ('baked chicken')

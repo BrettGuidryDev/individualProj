@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/recipe', recipeController.getRecipe, (req, res) => {
-  // console.log('test!!!!!!!', res.locals.query)
+  console.log('SERVER-RES!!!!!!!', res.locals.query)
   return res.status(200).json(res.locals.query);
 });
 

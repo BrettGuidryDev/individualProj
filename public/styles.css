@@ -1,0 +1,163 @@
+/* /.(css|scss)$/ */
+/* /\.s[ac]ss$/i */
+
+html{
+    display:flex;
+    justify-content: center;
+    background-color: hsla(147, 0%, 0%, 0.02);
+}
+
+body{
+
+    background-color:hsla(147, 0%, 0%, 0.02);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.App {
+    display:flex;
+    height: 500px;
+    background-color: hsla(147, 0%, 0%, 0.02);
+    border: 1px solid hsla(240, 0%, 0%, 0.02);
+    border-radius: 7px;
+}
+
+h1{
+    background-color: hsla(147, 0%, 0%, 0.02);
+}
+
+.Rlist{
+    display: flex;
+    justify-content: center;
+    /* overflow-y: scroll; */
+    padding-top: 1%;
+    margin-right: 0px;
+    /* margin-left: 5%; */
+    background-color: hsla(147, 0%, 0%, 0.02);
+    border: 0px solid hsla(240, 0%, 0%, 0.02);
+    
+}
+
+.ingItem{
+    background-color: hsla(147, 0%, 0%, 0.02);
+    width: 4em;
+    border: 1px solid hsla(240, 0%, 0%, 0.02);
+ 
+
+}
+/* .ingList: */
+.ingItem:hover{
+    background-color: hsla(147, 0%, 0%, 0.50);
+    transition-duration: 0.4s;
+}
+.ingItem:active{
+    background-color: hsla(147, 0%, 0%, 0.50);
+    color:red;
+}
+.ingItem:focus{
+    background-color: hsla(147, 0%, 0%, 0.50);
+    color:greenyellow;
+}
+
+
+#ingredientList{
+    padding-top: 15px;
+}
+
+
+
+.addLine{
+    height: 25px;
+    margin-bottom: 1em;
+}
+
+input{
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid hsla(240, 0%, 0%, 0.02);
+    border-radius: 3px;
+    padding: 5px;
+    
+    color:rgba(18, 41, 30, 0.8);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#b0{
+    display:inline;
+    justify-content: center;
+    background-color: hsla(147, 0%, 0%, 0.02);
+    color:hsla(151, 40%, 26%, 0.86);
+    border: 1px solid hsla(240, 0%, 0%, 0.02);
+    border-radius: 5px;
+    height: 100%;
+    padding: 0px;
+    margin: 5px;
+    height: 27px;
+    width: 50em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#b0:hover{
+    background-color:hsla(151, 40%, 26%, 0.86); 
+    color: antiquewhite;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+}
+
+#b1{
+    display:inline;
+    justify-content: center;
+    background-color: hsla(147, 0%, 0%, 0.02);
+    color:hsla(151, 40%, 26%, 0.86);
+    border: 1px solid hsla(240, 0%, 0%, 0.02);
+    border-radius: 5px;
+    height: 100%;
+    padding: 0px;
+    margin: 5px;
+    height: 27px;
+    width: 3em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#b1:hover{
+    background-color:hsla(151, 40%, 26%, 0.86); 
+    color: antiquewhite;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+}
+
+
+
+
+#b2{
+    background-color: hsla(147, 0%, 0%, 0.02);
+    color:hsla(151, 40%, 26%, 0.86);
+    font-size: 1.5em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: 1px solid hsla(240, 0%, 0%, 0.02);
+    border-radius: 10px;
+}
+
+#b2:hover{
+    background-color:hsla(151, 40%, 26%, 0.86); 
+    color: antiquewhite;
+    transition-duration: 0.4s;
+    border-radius: 140px;
+}
+
+#b3{
+    color:hsla(0, 100%, 53%, 0.49);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    justify-self:right;
+    margin-left: 30%;
+    background-color: hsla(147, 0%, 0%, 0.02);
+    border: 1px solid hsla(240, 0%, 0%, 0.02);
+    font-size: 1.5em;
+    transition-duration: 0.4s;
+    border-radius: 5px;
+}
+
+#b3:hover{
+    background-color: hsla(0, 100%, 53%, 0.99);
+    color: antiquewhite;
+    border-radius: 140px;
+ 
+}

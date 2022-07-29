@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import Rlist from './Rlist'
-
+import '../public/styles.css'
 
 
 const App = () =>{
@@ -12,9 +12,9 @@ const App = () =>{
     // }, []);
 
     return (
-        <div>
+        <div className="App">
             <h1>
-            Welcome to React App thats build using Webpack and Babel separately
+            Stretch goal: Recipes go here
             </h1>
             <Rlist /> 
         </div>

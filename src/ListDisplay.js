@@ -40,9 +40,11 @@ const List = () => {
   const ingList = items.map((e, i) => <div id={`item${i}`} key={i+e}>{e}</div>);
 //   const recList = recipe.map((e, i) => <div id={`recipe${i}`} key={i+e}>{e}</div>);
 
+  const testButton = () => {console.log('TESTBUTTONNNNNN!!!!')}
+
   const addToRecipe = async () => {
+    console.log("addToRecipeButton!!!!!")
     const idVal = document.getElementById('fieldR').value;
-    // setRecipe((recipe[0] = idVal));
     if (!idVal) return recipe
     
     if (!recipe[0]) {
@@ -59,10 +61,12 @@ const List = () => {
   };
 
   const addToList = () => {
+    console.log("addToListFunctionButton")
     addItems(items.concat(document.getElementById('fieldI').value));
   };
 
   const sendItems = async (recipe, ingredients) => {
+    console.log("sendItemsButton")
     await fetch('http://localhost:3000/addRecipe', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -73,31 +77,38 @@ const List = () => {
   }
 
   const delAll = async () => {
+    console.log("DelAllTables")
     await fetch('http://localhost:3000/delAll')
   }
 
 //   console.log(items);
   return (
-    <div>
-      <input type='text' placeholder='Recipe' id='fieldR'></input>
-      <input type='text' placeholder='required ingredient' id='fieldI'></input>
-      <button id='b1' onClick={() => { addToRecipe(),addToList() }}>
-        Add
-      </button>
+    <div >
+        <div className="addLine">
+          <input type='text' placeholder='Recipe' id='fieldR'></input>
+          <input type='text' placeholder='required ingredient' id='fieldI'></input>
+          <button id='b1' onClick={() => { addToRecipe(),addToList()}}>
+            Add
+          </button>
+        </div>
       <div>
         <h3>{recipe}</h3>
         {ingList}
       </div>
-      <div>
+      <div className="buttons">
         <button id='b2' onClick={() => sendItems(recipe, items)}>
           lock it in!
         </button>
         <button id='b3' onClick={() => delAll()}>
-          burn it all down
+          Start fresh
         </button>
       </div>
     </div>
   );
 };
-// }  //** */ <button id='b1' onClick={this.addIngredient}>
+// }  //** */ <button id='b1' onClick={this.addIngredient}> () => { addToRecipe(),addToList() }
 export default List;
+
+
+
+
